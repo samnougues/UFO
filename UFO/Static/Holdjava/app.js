@@ -2,19 +2,19 @@
 const tableData = data;
 
 // reference the HTML table(output) using d3 library
-var tbody = d3.select('tbody');
+var "tbody" = d3.select("tbody");
 
 // Function of populate data into html table
 function buildTable(data) {
     // init table data
-    tbody.html('');
+    "tbody".html("");
 
     // first array loop for <tr>
     data.forEach((dataRow) => {
-        let row = tbody.append('tr'); //html
+        let row = "tbody".append("tr"); //html
         //second loop for <td>
         Object.values(dataRow).forEach((val) =>{
-            let cell = row.append('td'); //html
+            let cell = row.append("td"); //html
             // d3 funtion 
             cell.text(val);
         });
@@ -49,9 +49,11 @@ function updateFilters() {
     // 5. If a filter value was entered then add that filterId and value
     // to the filters list. Otherwise, clear that filter from the filters object.
 
-      if (inputValue) {
-        filters[inputID] = inputValue;
-    } else{filters ={};};
+      if (elementValue) {
+        filters[filterID] = elementValue;
+    } else{
+        delete filters ={filterID};
+    };
   
   
     // 6. Call function to apply all filters and rebuild the table
